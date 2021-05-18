@@ -1,0 +1,226 @@
+					Assigenment No 1
+
+Question-1.
+1. - use a command to show the current working directory
+- list the directory contents in the short and long format
+(with file permissions,owner,size etc,.).
+Explore attributes given in long format e.g. file type, file permissions, file
+size, file owner etc.
+- list all files along with hidden files in current working directory.
+- list only hidden files in the directory
+(Hint : use pwd , ls, echo commands)
+
+Answers:-
+
+> sachin15@LAPTOP-S46SN2DA:~$ pwd
+/home/sachin15
+
+> sachin15@LAPTOP-S46SN2DA:~$ ls -sl
+total 48
+20 -rwxr-xr-x 1 sachin15 sachin15 16736 May 13 14:52 a.out
+ 0 -rw-r--r-- 1 sachin15 sachin15    27 May 13 21:29 c.sh
+ 0 -rw-r--r-- 1 sachin15 sachin15   117 May 13 20:48 cat.txt
+ 0 drwxr-xr-x 1 sachin15 sachin15  4096 May 11 14:57 cprogram
+ 0 -rw-r--r-- 1 sachin15 sachin15   123 May 13 21:57 even.sh
+20 -rwxr-xr-x 1 sachin15 sachin15 16736 May 13 14:48 fork
+ 0 -rw-r--r-- 1 sachin15 sachin15   132 May 13 14:52 fork.c
+ 0 -rw-r--r-- 1 sachin15 sachin15    92 May 11 22:41 forloop.c
+ 0 -rw-r--r-- 1 sachin15 sachin15     0 May 11 22:39 ls
+ 0 -rw-r--r-- 1 sachin15 sachin15   139 May 11 17:22 program.c
+ 0 -rw-r--r-- 1 sachin15 sachin15     0 May 13 15:44 ps
+ 0 -rw-r--r-- 1 sachin15 sachin15   475 May 13 15:57 ps.c
+ 0 drwxr-xr-x 1 sachin15 sachin15  4096 May 13 14:37 root_dir
+ 0 -rw-r--r-- 1 sachin15 sachin15    86 May 13 20:59 sac.txt
+ 0 drwxr-xr-x 1 sachin15 sachin15  4096 May 15 10:34 shellprogramming
+ 0 -rw-r--r-- 1 sachin15 sachin15    49 May 13 20:36 techmint.com
+ 8 -rw-r--r-- 1 sachin15 sachin15  7961 May 12 21:27 temp.txt
+
+> sachin15@LAPTOP-S46SN2DA:~$ ls -a
+.              .bash_logout  .hello.c.swp  .motd_shown                .swp      c.sh      even.sh  forloop.c  ps        sac.txt           temp.txt
+..             .bashrc       .landscape    .profile                   .viminfo  cat.txt   fork     ls         ps.c      shellprogramming
+.bash_history  .config       .local        .sudo_as_admin_successful  a.out     cprogram  fork.c   program.c  root_dir  techmint.com
+
+> sachin15@LAPTOP-S46SN2DA:~$ ls .?*
+.bash_history  .hello.c.swp  .sudo_as_admin_successful
+.bash_logout   .motd_shown   .swp
+.bashrc        .profile      .viminfo
+
+..:
+sachin15
+
+.config:
+procps
+
+.landscape:
+sysinfo.log
+
+.local:
+share
+
+2. Make a directory and name it as cdac-dir and change the current working
+directory to the new directory
+Answer:-
+> sachin15@LAPTOP-S46SN2DA:~$ mkdir cdac-dir
+sachin15@LAPTOP-S46SN2DA:~$ cd cdac-dir
+sachin15@LAPTOP-S46SN2DA:~/cdac-dir$
+
+4. List the directories(folders), then remove the cdac-dir directory and list the
+folders again to show that it is no longer present.(Hint : use rm, ls command).
+Answer:-
+> sachin15@LAPTOP-S46SN2DA:~$ ls
+a.out     even.sh    program.c  shellprogramming
+c.sh      fork       ps         techmint.com
+cat.txt   fork.c     ps.c       temp.txt
+cdac-dir  forloop.c  root_dir
+cprogram  ls         sac.txt
+sachin15@LAPTOP-S46SN2DA:~$ rmdir cdac-dir
+sachin15@LAPTOP-S46SN2DA:~$ ls
+a.out     fork       ps                techmint.com
+c.sh      fork.c     ps.c              temp.txt
+cat.txt   forloop.c  root_dir
+cprogram  ls         sac.txt
+even.sh   program.c  shellprogramming
+sachin15@LAPTOP-S46SN2DA:~$
+------------------------------------------------------------------------------
+
+1. Display the man-page for ls , but redirect the output into temp.txt , then use
+the cat, less , and more commands to display the new file.
+
+Answers
+
+1> sachin15@LAPTOP-S46SN2DA:~$ man ls
+ sachin15@LAPTOP-S46SN2DA:~$ man ls > temp.txt
+ sachin15@LAPTOP-S46SN2DA:~$ cat temp.txt
+ sachin15@LAPTOP-S46SN2DA:~$ less temp.txt
+ sachin15@LAPTOP-S46SN2DA:~$ more temp.txt
+
+
+2. Display the initial 10 lines and final 5 lines of temp.txt with the obvious Linux
+commands.(Hint: use head and tail commands).
+
+Answer:-
+2>sachin15@LAPTOP-S46SN2DA:~$ head -10 temp.txt
+LS(1)                                                            User Commands                                                            LS(1)
+
+NAME
+       ls - list directory contents
+
+SYNOPSIS
+       ls [OPTION]... [FILE]...
+
+DESCRIPTION
+       List  information  about  the  FILEs (the current directory by default).  Sort entries alphabetically if none of -cftuvSUX nor --sort is
+
+
+sachin15@LAPTOP-S46SN2DA:~$ tail -5 temp.txt
+SEE ALSO
+       Full documentation at: <https://www.gnu.org/software/coreutils/ls>
+       or available locally via: info '(coreutils) ls invocation'
+
+GNU coreutils 8.30                                               September 2019                                                           LS(1)
+
+3> sachin15@LAPTOP-S46SN2DA:~$ cp temp.txt shellprogramming
+   sachin15@LAPTOP-S46SN2DA:~$ cd shellprogramming
+   sachin15@LAPTOP-S46SN2DA:~/shellprogramming$ ls
+   0      even.sh   nseries.sh  odd_even.sh  print.sh    rev.sh      serieswhile.sh  temp.txt
+   ev.sh  multi.sh  nugre.sh    prime.sh     program.sh  reverse.sh  swap.sh
+   sachin15@LAPTOP-S46SN2DA:~/shellprogramming$ mv temp.txt sac.txt
+   sachin15@LAPTOP-S46SN2DA:~/shellprogramming$ ls
+   0      even.sh   nseries.sh  odd_even.sh  print.sh    rev.sh      sac.txt         swap.sh
+   ev.sh  multi.sh  nugre.sh    prime.sh     program.sh  reverse.sh  serieswhile.sh
+
+
+4> sachin15@LAPTOP-S46SN2DA:~$ cat cat.txt
+linuxry.com
+linuxsay.com
+news.techmint.com
+news.techmint.com
+tecmint.com
+tecmint.com
+windowsmint.com
+windowsmint.com
+sachin15@LAPTOP-S46SN2DA:~$ wc cat.txt
+  8   8 117 cat.txt
+
+5> sachin15@LAPTOP-S46SN2DA:~$ history 10
+ 1040  mv temp.txt sac.txt
+ 1041  ls
+ 1042  wc program.sh
+ 1043  clear
+ 1044  cd ..
+ 1045  ls
+ 1046  cat cat.txt
+ 1047  wc cat.txt
+ 1048  history -10
+ 1049  history 10
+----------------------------------------------------------------
+Question-4.
+1. Display current time and calendar (Hint : use date, cal commands)
+2. Change the current date and time of the system to following 14th
+March 2017, 10:10 AM
+3. Explore following commands
+who, whoami, whatis, whereis, (Hint : use man pages).
+
+Answers:-
+
+1>sachin15@LAPTOP-S46SN2DA:~$ date
+Sun May 16 13:15:53 IST 2021
+sachin15@LAPTOP-S46SN2DA:~$ cal
+      May 2021
+Su Mo Tu We Th Fr Sa
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30 31
+
+3> sachin15@LAPTOP-S46SN2DA:~$ whereis ls
+ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz
+
+  sachin15@LAPTOP-S46SN2DA:~$ whatis cat
+  cat (1)              - concatenate files and print on the standard output
+
+  sachin15@LAPTOP-S46SN2DA:~$ whatis man
+  man (7)              - macros to format man pages
+  man (1)              - an interface to the system reference manuals
+
+  sachin15@LAPTOP-S46SN2DA:~$ who -T -H
+  NAME       LINE         TIME             COMMENT
+
+
+sachin15@LAPTOP-S46SN2DA:~$ whoami --v
+whoami (GNU coreutils) 8.30
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Written by Richard Mlynarik.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
