@@ -1,0 +1,142 @@
+				Assigenment no.2
+1. Display your current shell on terminal using echo command.
+Answer:-
+sachin15@LAPTOP-S46SN2DA:~$ echo $SHELL
+/bin/bash
+------------------------------------------------------------------------
+
+2. Display files and directories in present working directory using echo
+command.
+Answer:-
+sachin15@LAPTOP-S46SN2DA:~$ echo *
+a.out c.sh cat.txt cprogram even.sh fork fork.c forloop.c ls program.c ps ps.c root_dir sac.txt shellprogramming techmint.com temp.txt
+sachin15@LAPTOP-S46SN2DA:~$
+-----------------------------------------------------------------------------------------------------------
+3. Write a shell script to Print prime numbers from 1 to n . Read the value of n
+from user.
+Amswer:-
+echo "enter a number"
+read n
+i=2
+f=0
+while test $i -le `expr $n / 2` 
+do
+if test `expr $n % $i` -eq 0 
+then
+f=1
+fi
+i=`expr $i + 1`
+done
+if test $f -eq 1 
+then
+echo "Not Prime"
+else
+echo "Prime"
+fi
+----------------------------------------------------------------------------
+4. Write a script to check given number is even or odd.
+Answer:-
+sachin15@LAPTOP-S46SN2DA:~/shellprogramming$ cat odd_even.sh
+#!/bin/bash
+echo -n "enter a number"
+read n;
+rem=$(( $n % 2 ))
+  if [ $rem -eq 0 ]
+  then
+        echo "$n is even number"
+  else
+        echo "$n is odd number"
+fi
+---------------------------------------------------------------------------
+
+6.Write a script to swap 2 numbers using intermediate variable.
+Answer:-
+echo "enter 2 numbers"
+read a
+read b
+echo "numbers before swap $a and $b"
+let c=a+b
+let b=c-b
+let a=c-b
+echo "numbers after swap is $a and $b"
+-------------------------------------------------------------------------------------
+7. Write a script to swap 2 numbers without using intermediate variable.
+Answer:
+echo "enter 2 numbers"
+read a
+read b
+echo "numbers before swap $a and $b"
+let a=a+b
+let b=a-b
+let a=a-b
+echo "numbers after swap is $a and $b"
+----------------------------------------------------------------------------------
+8. Write a script to reverse a number using while loop.
+Example:
+input : 12 output: 21
+input : 213 output: 312
+input : 125634 output:436521
+Answer:-
+
+echo "enter a number"
+read n
+temp=$n;
+rev=0;
+while [ $n -gt 0 ]
+do
+        rem=$(( n % 10 ))
+        rev=$(( $rev * 10 + $rem ))
+        n=$(( $n / 10 ))
+done
+ echo "the reverse of $temp is $rev"
+-----------------------------------------------------------------------
+
+9. print multiplication table of integer using while loop.
+Example:
+2 x 1 = 2
+2 x 2 = 4
+……….
+Answer:-
+echo "enter number"
+read n
+i=1;
+while [ $i -le 10 ]
+do
+        echo "$n x $i = $((n * i))"
+        i=$(( i + 1 ))
+done
+--------------------------------------------------------------------------
+10. Get year as an input from user and find whether year is leap year or not.
+Answer:-
+echo -n "Enter year (YYYY): "
+read y
+a = 'expr $y%4'
+b = 'expr $y%100'
+c = 'expr $y%400'
+if[$a -eq 0 -a $b -ne - -o $c -eq 0]
+then 
+echo "$y is leap year"
+else
+echo "$y is not a leap year"
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
