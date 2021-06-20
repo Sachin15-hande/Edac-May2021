@@ -1,21 +1,32 @@
-package javaassign;
+package sachin;
 import java.util.*;
+
+
 public class Q3 {
 
 	public static void main(String[] args) {
-		List<String>name=new ArrayList<>();
-		name.add("Sachin");
-		name.add("Sandhya");
-		name.add("Shrayva");
-		System.out.println("Size of ArrayList Before adding is\n" +name.size());
-        System.out.println("ArrayList before adding is " );
-        System.out.println("\n"+name);
-   
-        name.add(0, "Kailash");
-     
-     System.out.println("After adding name at first position Size of ArrayList is \n"+name.size());
-     System.out.println("After adding name at first position Names are\n");
-     System.out.println(name);
+		// TODO Auto-generated method stub
+		System.out.println("Enter values of x and y");
+		Scanner sc=new Scanner(System.in);
+		int x=sc.nextInt();
+		int y=sc.nextInt();
+		 y=x*x+3*x-7;
+		System.out.println("value of y is ="+" "+y);
+		y=x++ + ++x;
+		System.out.println("value of x is ="+" "+x);
+		System.out.println("value of y is ="+" "+y);
+		int z=((x++) - (--y) - (--x) + (x++));
+		System.out.println("vlaue of x is ="+" "+x);
+		System.out.println("vlaue of y is ="+" "+y);
+		System.out.println("vlaue of z is ="+" "+z);
+		System.out.println("Enter boolean value");
+		boolean a=sc.nextBoolean();
+		boolean b=sc.nextBoolean();
+		boolean c;
+		c=(a&&b)||!(a||b);
+		System.out.println("vlaue of c is"+" "+c);
+
+
 	}
 
 }
